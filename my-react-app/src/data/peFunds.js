@@ -1,4 +1,5 @@
 export const peFundsDatabase = [
+  // Tier 1 - Mega Funds
   {
     id: 1,
     name: "Blackstone Growth",
@@ -8,6 +9,8 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $100M",
     stage: ["growth"],
     description: "Focuses on high-growth technology companies with proven business models",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
@@ -19,6 +22,8 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $500M",
     stage: ["mature", "growth"],
     description: "Specializes in traditional industries with strong cash flows",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
@@ -30,6 +35,8 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $200M",
     stage: ["growth", "mature"],
     description: "Exclusively focused on software and technology-enabled businesses",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
@@ -41,6 +48,8 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $300M",
     stage: ["growth"],
     description: "Growth equity firm focused on disruptive technology companies",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
@@ -52,21 +61,12 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $1B",
     stage: ["mature"],
     description: "Large buyout fund focused on established businesses with growth potential",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
     id: 6,
-    name: "Insight Partners",
-    focusIndustries: ["software", "SaaS", "technology", "e-commerce"],
-    preferredSize: ["small", "medium"],
-    location: ["North America", "Europe"],
-    investmentRange: "$5M - $150M",
-    stage: ["startup", "growth"],
-    description: "Software-focused growth equity and venture capital firm",
-    matchScore: 0
-  },
-  {
-    id: 7,
     name: "TPG Capital",
     focusIndustries: ["healthcare", "consumer", "media", "telecommunications"],
     preferredSize: ["medium"],
@@ -74,10 +74,12 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $2B",
     stage: ["mature"],
     description: "Large-cap buyout firm with sector expertise",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
-    id: 8,
+    id: 7,
     name: "Warburg Pincus",
     focusIndustries: ["technology", "healthcare", "financial services", "energy"],
     preferredSize: ["medium"],
@@ -85,10 +87,40 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $500M",
     stage: ["growth", "mature"],
     description: "Growth-focused private equity with global reach",
+    tier: "mega",
+    source: "static",
     matchScore: 0
   },
   {
+    id: 8,
+    name: "Carlyle Group",
+    focusIndustries: ["aerospace", "defense", "energy", "healthcare", "technology"],
+    preferredSize: ["medium"],
+    location: ["Global"],
+    investmentRange: "$100M - $2B",
+    stage: ["mature"],
+    description: "Global investment firm with diversified sector focus",
+    tier: "mega",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Tier 2 - Large Cap Growth
+  {
     id: 9,
+    name: "Insight Partners",
+    focusIndustries: ["software", "SaaS", "technology", "e-commerce"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe"],
+    investmentRange: "$5M - $150M",
+    stage: ["startup", "growth"],
+    description: "Software-focused growth equity and venture capital firm",
+    tier: "large-growth",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 10,
     name: "Bain Capital Ventures",
     focusIndustries: ["technology", "healthcare", "fintech", "consumer tech"],
     preferredSize: ["small"],
@@ -96,17 +128,8 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $50M",
     stage: ["startup", "growth"],
     description: "Early to growth stage venture capital arm of Bain Capital",
-    matchScore: 0
-  },
-  {
-    id: 10,
-    name: "Riverside Company",
-    focusIndustries: ["business services", "education", "healthcare services", "specialty manufacturing"],
-    preferredSize: ["small"],
-    location: ["North America", "Europe"],
-    investmentRange: "$5M - $100M",
-    stage: ["mature", "growth"],
-    description: "Lower middle market focused on profitable, growing companies",
+    tier: "large-growth",
+    source: "static",
     matchScore: 0
   },
   {
@@ -118,6 +141,8 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $1B",
     stage: ["mature"],
     description: "Technology-focused private equity firm specializing in complex situations",
+    tier: "large-growth",
+    source: "static",
     matchScore: 0
   },
   {
@@ -129,6 +154,390 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $400M",
     stage: ["growth", "mature"],
     description: "Growth capital and buyout firm focused on service industries",
+    tier: "large-growth",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 13,
+    name: "Summit Partners",
+    focusIndustries: ["technology", "healthcare", "financial services", "consumer"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe"],
+    investmentRange: "$10M - $500M",
+    stage: ["growth", "mature"],
+    description: "Growth equity investments in high-growth companies",
+    tier: "large-growth",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 14,
+    name: "Spectrum Equity",
+    focusIndustries: ["software", "information services", "internet"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$20M - $200M",
+    stage: ["growth"],
+    description: "Growth capital for internet and software companies",
+    tier: "large-growth",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 15,
+    name: "TA Associates",
+    focusIndustries: ["technology", "healthcare", "financial services", "business services"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe"],
+    investmentRange: "$25M - $400M",
+    stage: ["growth", "mature"],
+    description: "Growth capital and buyout investments globally",
+    tier: "large-growth",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Tier 3 - Middle Market
+  {
+    id: 16,
+    name: "Riverside Company",
+    focusIndustries: ["business services", "education", "healthcare services", "specialty manufacturing"],
+    preferredSize: ["small"],
+    location: ["North America", "Europe"],
+    investmentRange: "$5M - $100M",
+    stage: ["mature", "growth"],
+    description: "Lower middle market focused on profitable, growing companies",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 17,
+    name: "Audax Group",
+    focusIndustries: ["business services", "healthcare", "specialty manufacturing", "consumer"],
+    preferredSize: ["small"],
+    location: ["North America"],
+    investmentRange: "$10M - $75M",
+    stage: ["mature"],
+    description: "Lower middle market buyout firm",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 18,
+    name: "Pamlico Capital",
+    focusIndustries: ["business services", "consumer", "healthcare", "industrial"],
+    preferredSize: ["small"],
+    location: ["North America"],
+    investmentRange: "$5M - $50M",
+    stage: ["mature", "growth"],
+    description: "Lower middle market growth capital",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 19,
+    name: "Bessemer Venture Partners",
+    focusIndustries: ["software", "cloud", "infrastructure", "healthcare tech"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe", "Asia"],
+    investmentRange: "$1M - $200M",
+    stage: ["startup", "growth"],
+    description: "Venture capital with focus on cloud and enterprise software",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 20,
+    name: "Oak Hill Capital",
+    focusIndustries: ["business services", "consumer", "industrial", "healthcare"],
+    preferredSize: ["medium"],
+    location: ["North America"],
+    investmentRange: "$100M - $500M",
+    stage: ["mature"],
+    description: "Middle market buyout investments",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Sector Specialists
+  {
+    id: 21,
+    name: "Healthpeak Properties (Healthcare)",
+    focusIndustries: ["healthcare", "life sciences", "medical devices"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$25M - $300M",
+    stage: ["growth", "mature"],
+    description: "Healthcare-focused real estate and operating companies",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 22,
+    name: "Energy Capital Partners",
+    focusIndustries: ["energy", "utilities", "power generation"],
+    preferredSize: ["medium"],
+    location: ["North America"],
+    investmentRange: "$50M - $1B",
+    stage: ["mature"],
+    description: "Energy infrastructure and technology investments",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 23,
+    name: "Providence Equity Partners",
+    focusIndustries: ["media", "communications", "information", "education"],
+    preferredSize: ["medium"],
+    location: ["North America", "Europe"],
+    investmentRange: "$50M - $1B",
+    stage: ["mature", "growth"],
+    description: "Specialized in media, communications, and information investments",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 24,
+    name: "FTV Capital",
+    focusIndustries: ["fintech", "financial services", "payments", "insurtech"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$10M - $100M",
+    stage: ["growth"],
+    description: "Growth capital for financial technology companies",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 25,
+    name: "Norwest Venture Partners",
+    focusIndustries: ["consumer", "enterprise", "healthcare", "financial services"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$1M - $200M",
+    stage: ["startup", "growth"],
+    description: "Multi-stage venture capital firm",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Consumer & Retail Focused
+  {
+    id: 26,
+    name: "L Catterton",
+    focusIndustries: ["consumer", "retail", "restaurants", "hospitality"],
+    preferredSize: ["small", "medium"],
+    location: ["Global"],
+    investmentRange: "$20M - $500M",
+    stage: ["growth", "mature"],
+    description: "Consumer-focused private equity firm",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 27,
+    name: "Roark Capital Group",
+    focusIndustries: ["restaurants", "retail", "consumer services", "business services"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$25M - $250M",
+    stage: ["mature"],
+    description: "Consumer and business services focused",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 28,
+    name: "TSG Consumer Partners",
+    focusIndustries: ["consumer", "retail", "restaurants", "consumer services"],
+    preferredSize: ["small"],
+    location: ["North America"],
+    investmentRange: "$5M - $50M",
+    stage: ["growth", "mature"],
+    description: "Growth capital for consumer businesses",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Healthcare Specialists
+  {
+    id: 29,
+    name: "Andreessen Horowitz (a16z)",
+    focusIndustries: ["technology", "software", "crypto", "biotech"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$1M - $200M",
+    stage: ["startup", "growth"],
+    description: "Technology venture capital with broad sector coverage",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 30,
+    name: "Deerfield Management",
+    focusIndustries: ["healthcare", "life sciences", "biotechnology"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$10M - $200M",
+    stage: ["growth", "mature"],
+    description: "Healthcare investment firm",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Technology Specialists
+  {
+    id: 31,
+    name: "Accel Partners",
+    focusIndustries: ["software", "internet", "mobile", "cloud"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe"],
+    investmentRange: "$1M - $100M",
+    stage: ["startup", "growth"],
+    description: "Early and growth stage technology investments",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 32,
+    name: "Sequoia Capital",
+    focusIndustries: ["technology", "healthcare", "financial services", "mobile"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Asia"],
+    investmentRange: "$1M - $1B",
+    stage: ["startup", "growth", "mature"],
+    description: "Premier venture capital firm with global reach",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 33,
+    name: "Lightspeed Venture Partners",
+    focusIndustries: ["enterprise", "consumer", "health", "fintech"],
+    preferredSize: ["small", "medium"],
+    location: ["North America", "Europe", "Asia"],
+    investmentRange: "$1M - $100M",
+    stage: ["startup", "growth"],
+    description: "Multi-stage venture capital firm",
+    tier: "venture",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Industrial & Manufacturing
+  {
+    id: 34,
+    name: "Industrial Growth Partners",
+    focusIndustries: ["industrial", "manufacturing", "business services"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$20M - $200M",
+    stage: ["mature", "growth"],
+    description: "Industrial and manufacturing focused growth equity",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 35,
+    name: "Court Square Capital Partners",
+    focusIndustries: ["business services", "industrial", "healthcare", "consumer"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$25M - $300M",
+    stage: ["mature"],
+    description: "Middle market buyout firm",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Business Services
+  {
+    id: 36,
+    name: "Trivest Partners",
+    focusIndustries: ["business services", "healthcare", "industrial", "consumer"],
+    preferredSize: ["small"],
+    location: ["North America"],
+    investmentRange: "$10M - $75M",
+    stage: ["mature"],
+    description: "Lower middle market buyout investments",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 37,
+    name: "Stephens Capital Partners",
+    focusIndustries: ["business services", "consumer", "industrial", "healthcare"],
+    preferredSize: ["small"],
+    location: ["North America"],
+    investmentRange: "$5M - $100M",
+    stage: ["mature", "growth"],
+    description: "Lower to middle market investments",
+    tier: "middle-market",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Education & Government Services
+  {
+    id: 38,
+    name: "Providence Strategic Growth",
+    focusIndustries: ["education", "government services", "healthcare IT"],
+    preferredSize: ["small", "medium"],
+    location: ["North America"],
+    investmentRange: "$20M - $200M",
+    stage: ["growth"],
+    description: "Growth investments in education and government services",
+    tier: "sector-specialist",
+    source: "static",
+    matchScore: 0
+  },
+
+  // Real Estate & Infrastructure
+  {
+    id: 39,
+    name: "Brookfield Asset Management",
+    focusIndustries: ["real estate", "infrastructure", "renewable energy"],
+    preferredSize: ["medium"],
+    location: ["Global"],
+    investmentRange: "$100M - $5B",
+    stage: ["mature"],
+    description: "Real estate and infrastructure investments",
+    tier: "infrastructure",
+    source: "static",
+    matchScore: 0
+  },
+  {
+    id: 40,
+    name: "Digital Colony",
+    focusIndustries: ["digital infrastructure", "telecommunications", "technology"],
+    preferredSize: ["medium"],
+    location: ["Global"],
+    investmentRange: "$50M - $1B",
+    stage: ["mature"],
+    description: "Digital infrastructure and technology investments",
+    tier: "infrastructure",
+    source: "static",
     matchScore: 0
   }
 ];
