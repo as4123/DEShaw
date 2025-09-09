@@ -210,8 +210,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $200M",
     stage: ["startup", "growth"],
     description: "Venture capital with focus on cloud and enterprise software",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
   {
@@ -236,8 +234,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $300M",
     stage: ["growth", "mature"],
     description: "Healthcare-focused real estate and operating companies",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -249,8 +245,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $1B",
     stage: ["mature"],
     description: "Energy infrastructure and technology investments",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -262,8 +256,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $1B",
     stage: ["mature", "growth"],
     description: "Specialized in media, communications, and information investments",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -275,8 +267,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $100M",
     stage: ["growth"],
     description: "Growth capital for financial technology companies",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -288,8 +278,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $200M",
     stage: ["startup", "growth"],
     description: "Multi-stage venture capital firm",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
 
@@ -303,8 +291,6 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $500M",
     stage: ["growth", "mature"],
     description: "Consumer-focused private equity firm",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -316,8 +302,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $250M",
     stage: ["mature"],
     description: "Consumer and business services focused",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -329,8 +313,6 @@ export const peFundsDatabase = [
     investmentRange: "$5M - $50M",
     stage: ["growth", "mature"],
     description: "Growth capital for consumer businesses",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
 
@@ -344,8 +326,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $200M",
     stage: ["startup", "growth"],
     description: "Technology venture capital with broad sector coverage",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
   {
@@ -357,8 +337,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $200M",
     stage: ["growth", "mature"],
     description: "Healthcare investment firm",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
 
@@ -372,8 +350,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $100M",
     stage: ["startup", "growth"],
     description: "Early and growth stage technology investments",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
   {
@@ -385,8 +361,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $1B",
     stage: ["startup", "growth", "mature"],
     description: "Premier venture capital firm with global reach",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
   {
@@ -398,8 +372,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $100M",
     stage: ["startup", "growth"],
     description: "Multi-stage venture capital firm",
-    tier: "venture",
-    source: "static",
     matchScore: 0
   },
 
@@ -413,8 +385,6 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $200M",
     stage: ["mature", "growth"],
     description: "Industrial and manufacturing focused growth equity",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
   {
@@ -463,8 +433,6 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $200M",
     stage: ["growth"],
     description: "Growth investments in education and government services",
-    tier: "sector-specialist",
-    source: "static",
     matchScore: 0
   },
 
@@ -478,8 +446,6 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $5B",
     stage: ["mature"],
     description: "Real estate and infrastructure investments",
-    tier: "infrastructure",
-    source: "static",
     matchScore: 0
   },
   {
@@ -491,8 +457,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $1B",
     stage: ["mature"],
     description: "Digital infrastructure and technology investments",
-    tier: "infrastructure",
-    source: "static",
     matchScore: 0
   }
 ];
