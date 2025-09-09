@@ -1,5 +1,4 @@
 export const peFundsDatabase = [
-  // Tier 1 - Mega Funds
   {
     id: 1,
     name: "Blackstone Growth",
@@ -9,8 +8,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $100M",
     stage: ["growth"],
     description: "Focuses on high-growth technology companies with proven business models",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -22,8 +19,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $500M",
     stage: ["mature", "growth"],
     description: "Specializes in traditional industries with strong cash flows",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -35,8 +30,6 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $200M",
     stage: ["growth", "mature"],
     description: "Exclusively focused on software and technology-enabled businesses",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -48,8 +41,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $300M",
     stage: ["growth"],
     description: "Growth equity firm focused on disruptive technology companies",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -61,8 +52,6 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $1B",
     stage: ["mature"],
     description: "Large buyout fund focused on established businesses with growth potential",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -74,8 +63,6 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $2B",
     stage: ["mature"],
     description: "Large-cap buyout firm with sector expertise",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -87,8 +74,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $500M",
     stage: ["growth", "mature"],
     description: "Growth-focused private equity with global reach",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
   {
@@ -100,8 +85,6 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $2B",
     stage: ["mature"],
     description: "Global investment firm with diversified sector focus",
-    tier: "mega",
-    source: "static",
     matchScore: 0
   },
 
@@ -115,8 +98,6 @@ export const peFundsDatabase = [
     investmentRange: "$5M - $150M",
     stage: ["startup", "growth"],
     description: "Software-focused growth equity and venture capital firm",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -128,8 +109,6 @@ export const peFundsDatabase = [
     investmentRange: "$1M - $50M",
     stage: ["startup", "growth"],
     description: "Early to growth stage venture capital arm of Bain Capital",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -141,8 +120,6 @@ export const peFundsDatabase = [
     investmentRange: "$50M - $1B",
     stage: ["mature"],
     description: "Technology-focused private equity firm specializing in complex situations",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -154,8 +131,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $400M",
     stage: ["growth", "mature"],
     description: "Growth capital and buyout firm focused on service industries",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -167,8 +142,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $500M",
     stage: ["growth", "mature"],
     description: "Growth equity investments in high-growth companies",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -180,8 +153,6 @@ export const peFundsDatabase = [
     investmentRange: "$20M - $200M",
     stage: ["growth"],
     description: "Growth capital for internet and software companies",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
   {
@@ -193,8 +164,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $400M",
     stage: ["growth", "mature"],
     description: "Growth capital and buyout investments globally",
-    tier: "large-growth",
-    source: "static",
     matchScore: 0
   },
 
@@ -208,8 +177,6 @@ export const peFundsDatabase = [
     investmentRange: "$5M - $100M",
     stage: ["mature", "growth"],
     description: "Lower middle market focused on profitable, growing companies",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
   {
@@ -221,8 +188,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $75M",
     stage: ["mature"],
     description: "Lower middle market buyout firm",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
   {
@@ -234,8 +199,6 @@ export const peFundsDatabase = [
     investmentRange: "$5M - $50M",
     stage: ["mature", "growth"],
     description: "Lower middle market growth capital",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
   {
@@ -260,8 +223,6 @@ export const peFundsDatabase = [
     investmentRange: "$100M - $500M",
     stage: ["mature"],
     description: "Middle market buyout investments",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
 
@@ -465,8 +426,6 @@ export const peFundsDatabase = [
     investmentRange: "$25M - $300M",
     stage: ["mature"],
     description: "Middle market buyout firm",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
 
@@ -480,8 +439,6 @@ export const peFundsDatabase = [
     investmentRange: "$10M - $75M",
     stage: ["mature"],
     description: "Lower middle market buyout investments",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
   {
@@ -493,8 +450,6 @@ export const peFundsDatabase = [
     investmentRange: "$5M - $100M",
     stage: ["mature", "growth"],
     description: "Lower to middle market investments",
-    tier: "middle-market",
-    source: "static",
     matchScore: 0
   },
 

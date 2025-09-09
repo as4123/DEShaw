@@ -97,7 +97,7 @@ const analyzeWithOpenAI = async (websiteData) => {
   }
 };
 
-export const analyzeWebsite = async (url, options = {}) => {
+export const analyzeWebsite = async (url) => {
   try {
     if (!process.env.REACT_APP_OPENAI_API_KEY) {
       throw new Error('OpenAI API key not configured. Please add REACT_APP_OPENAI_API_KEY to your environment variables.');
@@ -105,17 +105,11 @@ export const analyzeWebsite = async (url, options = {}) => {
 
     const websiteContent = await fetchWebsiteContent(url);
     const companyProfile = await analyzeWithOpenAI(websiteContent);
-    
-    // Use hybrid matching (static + dynamic discovery)
-    const matchingResult = await matchPEFunds(companyProfile, {
-      enableDynamicDiscovery: options.enableDynamicDiscovery !== false,
-      maxTotalResults: options.maxResults || 12
-    });
+    const matchingFunds = matchPEFunds(companyProfile);
 
     return {
       companyProfile,
-      matchingFunds: matchingResult.funds,
-      metadata: matchingResult.metadata,
+      matchingFunds,
       analysisDate: new Date().toISOString()
     };
   } catch (error) {

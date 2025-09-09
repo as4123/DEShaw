@@ -1,5 +1,4 @@
 import { peFundsDatabase } from '../data/peFunds';
-import { discoverDynamicFunds, isDynamicDiscoveryAvailable } from './dynamicFundDiscovery';
 
 const calculateMatchScore = (companyProfile, fund) => {
   let score = 0;
@@ -84,11 +83,8 @@ const addBusinessModelBonus = (companyProfile, fund, baseScore) => {
   return baseScore;
 };
 
-/**
- * Score and process a list of funds
- */
-const scoreFunds = (funds, companyProfile) => {
-  return funds.map(fund => {
+export const matchPEFunds = (companyProfile) => {
+  const scoredFunds = peFundsDatabase.map(fund => {
     let matchScore = calculateMatchScore(companyProfile, fund);
     
     const locationScore = getLocationScore(companyProfile, fund);
@@ -104,106 +100,11 @@ const scoreFunds = (funds, companyProfile) => {
       reasons: generateMatchReasons(companyProfile, fund, matchScore)
     };
   });
-};
 
-/**
- * Hybrid matching function that combines static and dynamic funds
- */
-export const matchPEFunds = async (companyProfile, options = {}) => {
-  const {
-    enableDynamicDiscovery = true,
-    maxStaticResults = 8,
-    maxDynamicResults = 10,
-    maxTotalResults = 12,
-    minMatchScore = 30
-  } = options;
-  
-  const allFunds = [];
-  const discoveryErrors = [];
-  
-  // 1. Score static funds from our curated database
-  const staticFunds = scoreFunds(peFundsDatabase, companyProfile);
-  const topStaticFunds = staticFunds
-    .filter(fund => fund.matchScore >= minMatchScore)
-    .sort((a, b) => b.matchScore - a.matchScore)
-    .slice(0, maxStaticResults);
-    
-  allFunds.push(...topStaticFunds);
-  
-  // 2. Discover dynamic funds if enabled and available
-  if (enableDynamicDiscovery && isDynamicDiscoveryAvailable().hasAnySource) {
-    try {
-      const dynamicResult = await discoverDynamicFunds(companyProfile, {
-        maxResults: maxDynamicResults
-      });
-      
-      if (dynamicResult.funds.length > 0) {
-        const scoredDynamicFunds = scoreFunds(dynamicResult.funds, companyProfile);
-        const topDynamicFunds = scoredDynamicFunds
-          .filter(fund => fund.matchScore >= minMatchScore)
-          .sort((a, b) => b.matchScore - a.matchScore);
-          
-        allFunds.push(...topDynamicFunds);
-      }
-      
-      if (dynamicResult.errors.length > 0) {
-        discoveryErrors.push(...dynamicResult.errors);
-      }
-      
-    } catch (error) {
-      discoveryErrors.push({
-        source: 'Dynamic Discovery',
-        error: error.message,
-        type: 'discovery-failure'
-      });
-    }
-  }
-  
-  // 3. Combine and deduplicate results
-  const uniqueFunds = [];
-  const seenNames = new Set();
-  
-  // Sort all funds by match score first
-  allFunds.sort((a, b) => b.matchScore - a.matchScore);
-  
-  for (const fund of allFunds) {
-    const normalizedName = fund.name.toLowerCase().trim();
-    if (!seenNames.has(normalizedName)) {
-      seenNames.add(normalizedName);
-      uniqueFunds.push(fund);
-      
-      if (uniqueFunds.length >= maxTotalResults) break;
-    }
-  }
-  
-  // 4. Return results with metadata
-  return {
-    funds: uniqueFunds,
-    metadata: {
-      staticCount: topStaticFunds.length,
-      dynamicCount: allFunds.length - topStaticFunds.length,
-      totalDiscovered: allFunds.length,
-      errors: discoveryErrors,
-      discoveryEnabled: enableDynamicDiscovery && isDynamicDiscoveryAvailable().hasAnySource,
-      sources: {
-        static: uniqueFunds.filter(f => f.source === 'static').length,
-        aiGenerated: uniqueFunds.filter(f => f.source === 'ai-generated').length,
-        external: uniqueFunds.filter(f => f.source && f.source !== 'static' && f.source !== 'ai-generated').length
-      }
-    }
-  };
-};
-
-/**
- * Legacy function for backward compatibility (synchronous static-only matching)
- */
-export const matchPEFundsSync = (companyProfile) => {
-  const scoredFunds = scoreFunds(peFundsDatabase, companyProfile);
-  
   const sortedFunds = scoredFunds
     .sort((a, b) => b.matchScore - a.matchScore)
     .filter(fund => fund.matchScore >= 30)
-    .slice(0, 8);
+    .slice(0, 6);
 
   return sortedFunds;
 };
