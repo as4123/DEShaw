@@ -12,7 +12,7 @@ const WebsiteInput = ({ onSubmit, disabled }) => {
       return false;
     }
   };
-asd
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
